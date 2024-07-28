@@ -5,7 +5,6 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import ButtonGradient from "../../assets/svg/ButtonGradient";
 import { BackgroundCircles, BottomLine, Gradient } from "../design/Hero";
 import { IoBug } from "react-icons/io5";
-import { IoMdPerson } from "react-icons/io";
 
 const Header = () => {
   const parallaxRef = useRef(null);
@@ -39,13 +38,13 @@ const Header = () => {
       </div>
       {openNavigation && (
         <div className="absolute top-[4rem] w-full h-screen bg-linear-3 ">
-          <div className="mt-16 flex flex-col justify-start items-center gap-16">
+          <div className="mt-16 flex flex-col items-center gap-8">
             <div className="flex">
               <IoBug className="w-6 h-6 text-color-7" />
               <p className="text-[1rem] text-color-7 ml-4">Bounties</p>
             </div>
-            <div className="flex ">
-              <IoMdPerson className="w-6 h-6 text-color-7" />
+            <div className="flex justify-start">
+              <IoBug className="w-6 h-6 text-color-7" />
               <p className="text-[1rem] text-color-7 ml-4">Profile</p>
             </div>
           </div>

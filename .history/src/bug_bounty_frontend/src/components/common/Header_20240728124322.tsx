@@ -5,7 +5,6 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import ButtonGradient from "../../assets/svg/ButtonGradient";
 import { BackgroundCircles, BottomLine, Gradient } from "../design/Hero";
 import { IoBug } from "react-icons/io5";
-import { IoMdPerson } from "react-icons/io";
 
 const Header = () => {
   const parallaxRef = useRef(null);
@@ -45,7 +44,7 @@ const Header = () => {
               <p className="text-[1rem] text-color-7 ml-4">Bounties</p>
             </div>
             <div className="flex ">
-              <IoMdPerson className="w-6 h-6 text-color-7" />
+              <IoBug className="w-6 h-6 text-color-7" />
               <p className="text-[1rem] text-color-7 ml-4">Profile</p>
             </div>
           </div>
