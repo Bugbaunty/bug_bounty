@@ -6,11 +6,9 @@ import ButtonGradient from "../../assets/svg/ButtonGradient";
 import { BackgroundCircles, BottomLine, Gradient } from "../design/Hero";
 import { IoBug } from "react-icons/io5";
 import { IoMdPerson } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const parallaxRef = useRef(null);
-  const navigate = useNavigate();
   const [openNavigation, setOpenNavigation] = useState<boolean>(false);
 
   const toggleNavigation = () => {
@@ -38,10 +36,7 @@ const Header = () => {
         >
           <MenuSvg openNavigation={openNavigation} />
         </Button>
-        <div
-          className="hidden lg:flex cursor-pointer"
-          onClick={() => navigate("./profile")}
-        >
+        <div className="hidden lg:flex cursor-pointer">
           <img src={`avatar.jpg`} className="rounded-full w-8 h-8" alt="" />
         </div>
       </div>

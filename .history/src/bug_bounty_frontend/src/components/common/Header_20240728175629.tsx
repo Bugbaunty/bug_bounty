@@ -38,10 +38,7 @@ const Header = () => {
         >
           <MenuSvg openNavigation={openNavigation} />
         </Button>
-        <div
-          className="hidden lg:flex cursor-pointer"
-          onClick={() => navigate("./profile")}
-        >
+        <div className="hidden lg:flex cursor-pointer">
           <img src={`avatar.jpg`} className="rounded-full w-8 h-8" alt="" />
         </div>
       </div>
