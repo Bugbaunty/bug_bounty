@@ -112,9 +112,6 @@ const CreateBounty = () => {
                 <ConfigProvider
                   theme={{
                     algorithm: theme.darkAlgorithm,
-                    token: {
-                      colorPrimary: "#9F9FA8",
-                    },
                   }}
                 >
                   <Input
@@ -132,6 +129,10 @@ const CreateBounty = () => {
                 <ConfigProvider
                   theme={{
                     algorithm: theme.darkAlgorithm,
+                    token: {
+                      colorPrimary: "#9F9FA8",
+                      colorPrimaryActive: "#9F9FA8",
+                    },
                   }}
                 >
                   <Tag onClick={showInput} style={tagPlusStyle}>

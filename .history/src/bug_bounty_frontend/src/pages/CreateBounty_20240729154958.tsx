@@ -114,6 +114,8 @@ const CreateBounty = () => {
                     algorithm: theme.darkAlgorithm,
                     token: {
                       colorPrimary: "#9F9FA8",
+                      colorPrimaryActive: "#9F9FA8",
+                      colorPrimaryHover: "#9F9FA8",
                     },
                   }}
                 >

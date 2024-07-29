@@ -66,6 +66,7 @@ const CreateBounty = () => {
 
   const tagPlusStyle: React.CSSProperties = {
     borderStyle: "dashed",
+    borderColor: "#9F9FA8",
   };
 
   // Details
@@ -113,7 +114,7 @@ const CreateBounty = () => {
                   theme={{
                     algorithm: theme.darkAlgorithm,
                     token: {
-                      colorPrimary: "#9F9FA8",
+                      colorBorder: "#9F9FA8",
                     },
                   }}
                 >
