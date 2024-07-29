@@ -2,15 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/common/Header";
 import Sidebar from "../components/common/Sidebar";
 import { ConfigProvider, Input, InputRef, Select, Tag, theme } from "antd";
+import { TweenOneGroup } from "rc-tween-one";
 import { PlusOutlined } from "@ant-design/icons";
-import Editor from "../components/Texteditor/Editor";
 
 const CreateBounty = () => {
   const { token } = theme.useToken();
-  const [tags, setTags] = useState(["Tag 1", "Tag 2"]);
+  const [tags, setTags] = useState(["Tag 1", "Tag 2", "Tag 3"]);
   const [inputVisible, setInputVisible] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const [bountyDetails, setBountyDetails] = useState<string>("");
   const inputRef = useRef<InputRef>(null);
 
   //  TAG FUNCTIONS
@@ -44,34 +43,23 @@ const CreateBounty = () => {
 
   const forMap = (tag: string) => (
     <span key={tag} style={{ display: "inline-block" }}>
-      <ConfigProvider
-        theme={{
-          algorithm: theme.darkAlgorithm,
+      <Tag
+        closable
+        onClose={(e) => {
+          e.preventDefault();
+          handleClose(tag);
         }}
       >
-        <Tag
-          closable
-          onClose={(e) => {
-            e.preventDefault();
-            handleClose(tag);
-          }}
-        >
-          {tag}
-        </Tag>
-      </ConfigProvider>
+        {tag}
+      </Tag>
     </span>
   );
 
   const tagChild = tags.map(forMap);
 
   const tagPlusStyle: React.CSSProperties = {
+    background: token.colorBgContainer,
     borderStyle: "dashed",
-  };
-
-  // Details
-
-  const handleContent = (rules: any) => {
-    setBountyDetails(rules);
   };
 
   return (
@@ -107,28 +95,46 @@ const CreateBounty = () => {
           </div>
           <div className="">
             <>
-              <div style={{ marginBottom: 16 }}>{tagChild}</div>
-              {inputVisible ? (
-                <ConfigProvider
-                  theme={{
-                    algorithm: theme.darkAlgorithm,
+              <div style={{ marginBottom: 16 }}>
+                <TweenOneGroup
+                  appear={false}
+                  enter={{
+                    scale: 0.8,
+                    opacity: 0,
+                    type: "from",
+                    duration: 100,
+                  }}
+                  leave={{ opacity: 0, width: 0, scale: 0, duration: 200 }}
+                  onEnd={(e) => {
+                    if (e.type === "appear" || e.type === "enter") {
+                      (e.target as any).style = "display: inline-block";
+                    }
                   }}
                 >
-                  <Input
-                    ref={inputRef}
-                    type="text"
-                    size="small"
-                    style={{ width: 78 }}
-                    value={inputValue}
-                    onChange={handleInputChange}
-                    onBlur={handleInputConfirm}
-                    onPressEnter={handleInputConfirm}
-                  />
-                </ConfigProvider>
+                  {tagChild}
+                </TweenOneGroup>
+              </div>
+              {inputVisible ? (
+                <Input
+                  ref={inputRef}
+                  type="text"
+                  size="small"
+                  style={{ width: 78 }}
+                  value={inputValue}
+                  onChange={handleInputChange}
+                  onBlur={handleInputConfirm}
+                  onPressEnter={handleInputConfirm}
+                />
               ) : (
                 <ConfigProvider
                   theme={{
                     algorithm: theme.darkAlgorithm,
+                    token: {
+                      colorPrimaryActive: "#9F9FA8",
+                      colorPrimary: "#9F9FA8",
+                      colorPrimaryHover: "#9F9FA8",
+                      colorText: "#fff",
+                    },
                   }}
                 >
                   <Tag onClick={showInput} style={tagPlusStyle}>
@@ -138,17 +144,24 @@ const CreateBounty = () => {
               )}
             </>
           </div>
-          {/* Bounty Statement */}
-          <div className="flex-col flex mt-4 ">
-            <p className="text-sm sm:text-[.85rem] mt-[.8rem] font-normal text-white">
-              Details
-            </p>
-            <Editor handleContent={handleContent} content={bountyDetails} />
-          </div>
         </div>
       </div>
     </div>
   );
 };
+
+{
+  /* <ConfigProvider
+  theme={{
+    algorithm: theme.darkAlgorithm,
+    token: {
+      colorPrimaryActive: "#9F9FA8",
+      colorPrimary: "#9F9FA8",
+      colorPrimaryHover: "#9F9FA8",
+      colorText: "#fff",
+    },
+  }}
+></ConfigProvider>; */
+}
 
 export default CreateBounty;

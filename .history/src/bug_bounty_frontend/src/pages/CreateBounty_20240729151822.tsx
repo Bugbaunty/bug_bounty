@@ -2,15 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/common/Header";
 import Sidebar from "../components/common/Sidebar";
 import { ConfigProvider, Input, InputRef, Select, Tag, theme } from "antd";
+import { TweenOneGroup } from "rc-tween-one";
 import { PlusOutlined } from "@ant-design/icons";
-import Editor from "../components/Texteditor/Editor";
 
 const CreateBounty = () => {
   const { token } = theme.useToken();
   const [tags, setTags] = useState(["Tag 1", "Tag 2"]);
   const [inputVisible, setInputVisible] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const [bountyDetails, setBountyDetails] = useState<string>("");
   const inputRef = useRef<InputRef>(null);
 
   //  TAG FUNCTIONS
@@ -68,12 +67,6 @@ const CreateBounty = () => {
     borderStyle: "dashed",
   };
 
-  // Details
-
-  const handleContent = (rules: any) => {
-    setBountyDetails(rules);
-  };
-
   return (
     <div className="flex ">
       <Header />
@@ -107,7 +100,25 @@ const CreateBounty = () => {
           </div>
           <div className="">
             <>
-              <div style={{ marginBottom: 16 }}>{tagChild}</div>
+              <div style={{ marginBottom: 16 }}>
+                {/* <TweenOneGroup
+                  appear={false}
+                  enter={{
+                    scale: 0.8,
+                    opacity: 0,
+                    type: "from",
+                    duration: 100,
+                  }}
+                  leave={{ opacity: 0, width: 0, scale: 0, duration: 200 }}
+                  onEnd={(e) => {
+                    if (e.type === "appear" || e.type === "enter") {
+                      (e.target as any).style = "display: inline-block";
+                    }
+                  }}
+                > */}
+                {tagChild}
+                {/* </TweenOneGroup> */}
+              </div>
               {inputVisible ? (
                 <ConfigProvider
                   theme={{
@@ -137,13 +148,6 @@ const CreateBounty = () => {
                 </ConfigProvider>
               )}
             </>
-          </div>
-          {/* Bounty Statement */}
-          <div className="flex-col flex mt-4 ">
-            <p className="text-sm sm:text-[.85rem] mt-[.8rem] font-normal text-white">
-              Details
-            </p>
-            <Editor handleContent={handleContent} content={bountyDetails} />
           </div>
         </div>
       </div>

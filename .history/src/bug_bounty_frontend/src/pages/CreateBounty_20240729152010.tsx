@@ -3,14 +3,12 @@ import Header from "../components/common/Header";
 import Sidebar from "../components/common/Sidebar";
 import { ConfigProvider, Input, InputRef, Select, Tag, theme } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import Editor from "../components/Texteditor/Editor";
 
 const CreateBounty = () => {
   const { token } = theme.useToken();
   const [tags, setTags] = useState(["Tag 1", "Tag 2"]);
   const [inputVisible, setInputVisible] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const [bountyDetails, setBountyDetails] = useState<string>("");
   const inputRef = useRef<InputRef>(null);
 
   //  TAG FUNCTIONS
@@ -66,12 +64,6 @@ const CreateBounty = () => {
 
   const tagPlusStyle: React.CSSProperties = {
     borderStyle: "dashed",
-  };
-
-  // Details
-
-  const handleContent = (rules: any) => {
-    setBountyDetails(rules);
   };
 
   return (
@@ -137,13 +129,6 @@ const CreateBounty = () => {
                 </ConfigProvider>
               )}
             </>
-          </div>
-          {/* Bounty Statement */}
-          <div className="flex-col flex mt-4 ">
-            <p className="text-sm sm:text-[.85rem] mt-[.8rem] font-normal text-white">
-              Details
-            </p>
-            <Editor handleContent={handleContent} content={bountyDetails} />
           </div>
         </div>
       </div>
