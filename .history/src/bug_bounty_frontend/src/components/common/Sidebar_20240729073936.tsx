@@ -20,7 +20,7 @@ const Sidebar = () => {
     },
     {
       name: "Teams",
-      link: "",
+      link: "/dashboard",
       icon: IoIosPeople,
     },
   ];

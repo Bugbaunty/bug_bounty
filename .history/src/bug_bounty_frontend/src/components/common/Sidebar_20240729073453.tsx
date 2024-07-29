@@ -17,6 +17,10 @@ const Sidebar = () => {
       name: "Bounties",
       link: "/dashboard",
       icon: IoBug,
+      subMenu: [
+        //   { name: "Prepaid", link: "/prepaid-tournament" },
+        //   { name: "CrowdFunded", link: "/active-tournament" },
+      ],
     },
     {
       name: "Teams",
@@ -45,13 +49,11 @@ const Sidebar = () => {
               className={`flex items-center ${
                 !open ? "justify-center pl-5" : ""
               } cursor-pointer text-sm gap-3.5 font-medium p-2 mx-2 hover:bg-white/10 rounded-md`}
-              onClick={
-                () =>
-                  // !menu.subMenu
-                  // ?
-                  navigate(`${menu.link}`)
-                // : setOpenSubMenu(!openSubMenu);
-              }
+              onClick={() => {
+                !menu.subMenu
+                  ? navigate(`${menu.link}`)
+                  : setOpenSubMenu(!openSubMenu);
+              }}
             >
               <div
                 // className={`${!open ? "" : "ml-[1.5rem]"}`}
@@ -86,7 +88,7 @@ const Sidebar = () => {
                 />
               )} */}
             </div>
-            {/* {menu.subMenu && openSubMenu && open && (
+            {menu.subMenu && openSubMenu && open && (
               <ul className="flex flex-col ml-[3rem] z-50  rounded-md ">
                 {menu.subMenu.map((value, index) => (
                   <NavLink
@@ -102,7 +104,7 @@ const Sidebar = () => {
                   </NavLink>
                 ))}
               </ul>
-            )} */}
+            )}
           </div>
         ))}
       </div>

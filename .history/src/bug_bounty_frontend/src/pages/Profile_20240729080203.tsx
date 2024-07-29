@@ -24,37 +24,14 @@ const Profile = () => {
               <p className=" my-2 text-sm text-color-7 ">Software Engineer</p>
               <p className=" my-2 text-[1rem] text-color-7 ">Lagos, Nigeria</p>
             </div>
-            <div className="flex flex-col mt-[-3rem] ">
+            <div className="flex flex-col mt-[-4rem] ">
               <h3 className="flex justify-center text-white text-sm font-bold">
                 Current role
               </h3>
-              <div className="flex justify-center items-center bg-[#1E1E21] px-3 h-fit my-2 rounded-full ">
+              <div className="flex justify-center items-center bg-white/15 px-2 h-fit my-2 rounded-full ">
                 <p className=" my-2 text-[.85rem] text-color-7 ">
                   Software Engineer
                 </p>
-              </div>
-            </div>
-          </div>
-          {/* TAGS */}
-          <div className="flex flex-col mt-6">
-            <h3 className="flex justify-start text-white text-sm font-bold">
-              Skills
-            </h3>
-            <div className="flex flex-wrap gap-4 my-3">
-              <div className="flex justify-center items-center bg-[#111E18] p-1 rounded-md px-2">
-                <p className="text-[.7rem] text-[#3DB569]">React</p>
-              </div>
-              <div className="flex justify-center items-center bg-[#211416] p-1 rounded-md px-2">
-                <p className="text-[.7rem] text-[#EA4343]">Next Js</p>
-              </div>
-              <div className="flex justify-center items-center bg-[#102533] p-1 rounded-md px-2">
-                <p className="text-[.7rem] text-[#2497D0]">Typescript</p>
-              </div>
-              <div className="flex justify-center items-center bg-[#382612] p-1 rounded-md px-2">
-                <p className="text-[.7rem] text-[#F59E0D]">Flutter</p>
-              </div>
-              <div className="flex justify-center items-center bg-[#1E1E21] p-1 rounded-md px-2">
-                <p className="text-[.7rem] text-[#A1A1AA]">Dart</p>
               </div>
             </div>
           </div>

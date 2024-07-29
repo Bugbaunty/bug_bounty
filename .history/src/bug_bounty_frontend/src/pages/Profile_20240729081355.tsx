@@ -28,7 +28,7 @@ const Profile = () => {
               <h3 className="flex justify-center text-white text-sm font-bold">
                 Current role
               </h3>
-              <div className="flex justify-center items-center bg-[#1E1E21] px-3 h-fit my-2 rounded-full ">
+              <div className="flex justify-center items-center bg-white/15 px-3 h-fit my-2 rounded-full ">
                 <p className=" my-2 text-[.85rem] text-color-7 ">
                   Software Engineer
                 </p>

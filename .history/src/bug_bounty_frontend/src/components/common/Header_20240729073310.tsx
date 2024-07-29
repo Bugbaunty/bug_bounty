@@ -51,23 +51,11 @@ const Header = () => {
       {openNavigation && (
         <div className="absolute top-[4rem] w-full h-screen bg-linear-3 ">
           <div className="mt-16 flex flex-col justify-start items-center gap-16 z-50-">
-            <div
-              onClick={() => {
-                navigate("/dashboard");
-                setOpenNavigation(false);
-              }}
-              className="flex"
-            >
+            <div className="flex">
               <IoBug className="w-6 h-6 text-color-7" />
               <p className="text-[1rem] text-color-7 ml-4">Bounties</p>
             </div>
-            <div
-              onClick={() => {
-                navigate("/profile");
-                setOpenNavigation(false);
-              }}
-              className="flex "
-            >
+            <div className="flex ">
               <IoMdPerson className="w-6 h-6 text-color-7" />
               <p className="text-[1rem] text-color-7 ml-4">Profile</p>
             </div>
