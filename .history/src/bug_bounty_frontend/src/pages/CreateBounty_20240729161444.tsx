@@ -1,15 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/common/Header";
 import Sidebar from "../components/common/Sidebar";
-import {
-  ConfigProvider,
-  DatePicker,
-  Input,
-  InputRef,
-  Select,
-  Tag,
-  theme,
-} from "antd";
+import { ConfigProvider, Input, InputRef, Select, Tag, theme } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import Editor from "../components/Texteditor/Editor";
 
@@ -103,7 +95,7 @@ const CreateBounty = () => {
             <p className="text-sm sm:text-[.85rem] mt-[.8rem] font-normal text-white">
               Title
             </p>
-            <div className=" my-4 items-center pr-8 pl-2 h-[2rem] border-[#595959] hover:border-[#fc923b]  bg-[#141414] border-solid border rounded-[6px] flex">
+            <div className=" my-4 items-center pr-8 pl-2 h-[2rem] border-[#595959] hover:border-color-7  bg-[#141414] border-solid border rounded-[6px] flex">
               <input
                 className="border-none w-full text-white pl-0 focus:outline-none placeholder:text-[0.8rem] focus:ring-0 placeholder:text-[#595959] appearance-none text-[0.9rem] bg-[#141414] py-[.1rem]"
                 placeholder="Summarize bounty title"
@@ -121,7 +113,7 @@ const CreateBounty = () => {
                   theme={{
                     algorithm: theme.darkAlgorithm,
                     token: {
-                      colorPrimary: "#fc923b",
+                      colorPrimary: "#9F9FA8",
                     },
                   }}
                 >
@@ -149,50 +141,6 @@ const CreateBounty = () => {
               )}
             </>
           </div>
-          <div className="flex flex-row gap-8 mt-4 items-center ">
-            <div className="flex flex-col w-full">
-              <p className=" mb-4 text-sm sm:text-[.85rem] mt-[.8rem] font-normal text-white">
-                Start Date
-              </p>
-              <ConfigProvider
-                theme={{
-                  algorithm: theme.darkAlgorithm,
-                  token: {
-                    colorPrimaryActive: "#fc923b",
-                    colorPrimary: "#fc923b",
-                    colorPrimaryHover: "#fc923b",
-                    colorText: "#fff",
-                  },
-                }}
-              >
-                <DatePicker
-                // disabledDate={disabledDate}
-                // onChange={onDateChange}
-                />
-              </ConfigProvider>
-            </div>
-            <div className="flex flex-col w-full ">
-              <p className=" mb-4 mt-3   text-sm sm:text-[.85rem] font-normal text-white">
-                End Date
-              </p>
-              <ConfigProvider
-                theme={{
-                  algorithm: theme.darkAlgorithm,
-                  token: {
-                    colorPrimaryActive: "#fc923b",
-                    colorPrimary: "#fc923b",
-                    colorPrimaryHover: "#fc923b",
-                    colorText: "#fff",
-                  },
-                }}
-              >
-                <DatePicker
-                // disabledDate={disabledDate}
-                // onChange={onEndDateChange}
-                />
-              </ConfigProvider>
-            </div>
-          </div>
           {/* Bounty Statement */}
           <div className="flex-col flex mt-4 ">
             <p className="text-sm sm:text-[.85rem] mt-[.8rem] font-normal text-white">
@@ -213,9 +161,9 @@ const CreateBounty = () => {
               theme={{
                 algorithm: theme.darkAlgorithm,
                 token: {
-                  colorPrimaryActive: "#fc923b",
-                  colorPrimary: "#fc923b",
-                  colorPrimaryHover: "#fc923b",
+                  colorPrimaryActive: "#9F9FA8",
+                  colorPrimary: "#9F9FA8",
+                  colorPrimaryHover: "#9F9FA8",
                   colorText: "#fff",
                 },
               }}
@@ -236,16 +184,16 @@ const CreateBounty = () => {
           </div>
           <div className="flex flex-row gap-8 items-center ">
             <div className="flex flex-col w-[50%]">
-              <p className="mb-4 text-sm sm:text-[.85rem] mt-[1.5rem] font-normal text-white">
+              <p className="mb-4 text-sm sm:text-[.85rem] mt-[1rem] font-normal text-white">
                 Sponsor's contact info
               </p>
               <ConfigProvider
                 theme={{
                   algorithm: theme.darkAlgorithm,
                   token: {
-                    colorPrimaryActive: "#fc923b",
-                    colorPrimary: "#fc923b",
-                    colorPrimaryHover: "#fc923b",
+                    colorPrimaryActive: "#9F9FA8",
+                    colorPrimary: "#9F9FA8",
+                    colorPrimaryHover: "#9F9FA8",
                     colorText: "#fff",
                   },
                 }}
@@ -258,21 +206,21 @@ const CreateBounty = () => {
                   options={[
                     {
                       value: "Email",
-                      label: "Email",
+                      label: "email",
                     },
                     {
                       value: "Telegram",
-                      label: "Telegram",
+                      label: "telegram",
                     },
                     {
                       value: "Discord",
-                      label: "Discord",
+                      label: "discord",
                     },
                   ]}
                 />
               </ConfigProvider>
             </div>
-            <div className=" mt-[3.7rem] items-center pr-8 pl-2 h-[2rem] border-[#595959] hover:border-[#fc923b]  bg-[#141414] border-solid border w-[50%] rounded-[6px] flex">
+            <div className=" mt-[3.3rem] items-center pr-8 pl-2 h-[2rem] border-[#595959] hover:border-color-7  bg-[#141414] border-solid border w-[50%] rounded-[6px] flex">
               <input
                 className="border-none w-full text-white pl-0 focus:outline-none placeholder:text-[0.8rem] focus:ring-0 placeholder:text-[#595959] appearance-none text-[0.9rem] bg-[#141414] py-[.1rem]"
                 placeholder="Input contact address"
@@ -280,103 +228,6 @@ const CreateBounty = () => {
                 // onChange={onTitleChange}
                 // value={title}
               />
-            </div>
-          </div>
-          {/* PAYMENT SECTION */}
-          <div className="mt-8 mb-4 border border-solid border-[#2E3438] w-full" />
-          <p className="text-[0.8rem] mt-4 mb-[1rem] font-semibold sm:text-base  bg-gradient-to-r from-linear-1  to-linear-2  text-[transparent] bg-clip-text">
-            Payment Details
-          </p>
-          <div className="flex flex-row gap-8 items-center ">
-            <div className="flex flex-col w-[50%]">
-              <p className="mb-4 text-sm sm:text-[.85rem] mt-[1.5rem] font-normal text-white">
-                Token for reward
-              </p>
-              <ConfigProvider
-                theme={{
-                  algorithm: theme.darkAlgorithm,
-                  token: {
-                    colorPrimaryActive: "#fc923b",
-                    colorPrimary: "#fc923b",
-                    colorPrimaryHover: "#fc923b",
-                    colorText: "#fff",
-                  },
-                }}
-              >
-                <Select
-                  placeholder="Payment method"
-                  optionFilterProp="children"
-                  // onChange={handleTournamentTypeChange}
-                  // filterOption={filterOption1}
-                  options={[
-                    {
-                      value: "ICP",
-                      label: "ICP",
-                    },
-                    {
-                      value: "CKbtc",
-                      label: "CKbtc",
-                    },
-                    {
-                      value: "CKusdc",
-                      label: "CKusdc",
-                    },
-                  ]}
-                />
-              </ConfigProvider>
-            </div>
-            <div className="flex flex-col w-[50%]">
-              <p className="mb-4 text-sm sm:text-[.85rem] mt-[1.5rem] font-normal text-white">
-                Token Amount
-              </p>
-              <div className="w-full items-center pr-8 pl-2 h-[2rem] border-[#595959] hover:border-[#fc923b]  bg-[#141414] border-solid border rounded-[6px] flex">
-                <input
-                  className="border-none w-full text-white pl-0 focus:outline-none placeholder:text-[0.8rem] focus:ring-0 placeholder:text-[#595959] appearance-none text-[0.9rem] bg-[#141414] py-[.1rem]"
-                  placeholder="Amount"
-                  type="text"
-                  // onChange={onTitleChange}
-                  // value={title}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-row gap-8 items-center ">
-            <div className="flex flex-col w-[50%]">
-              <p className=" mb-4 text-sm sm:text-[.85rem] mt-[1.5rem] font-normal text-white">
-                Number of Winners
-              </p>
-              <ConfigProvider
-                theme={{
-                  algorithm: theme.darkAlgorithm,
-                  token: {
-                    colorPrimaryActive: "#fc923b",
-                    colorPrimary: "#fc923b",
-                    colorPrimaryHover: "#fc923b",
-                    colorText: "#fff",
-                  },
-                }}
-              >
-                <Select
-                  placeholder=" Number of Winners"
-                  optionFilterProp="children"
-                  // onChange={handleWinnersChange}
-                  // filterOption={filterOption}
-                  options={[
-                    {
-                      value: "1",
-                      label: "1",
-                    },
-                    {
-                      value: "2",
-                      label: "2",
-                    },
-                    {
-                      value: "3",
-                      label: "3",
-                    },
-                  ]}
-                />
-              </ConfigProvider>
             </div>
           </div>
         </div>

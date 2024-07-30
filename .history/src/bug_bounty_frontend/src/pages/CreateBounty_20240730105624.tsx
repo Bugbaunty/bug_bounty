@@ -326,10 +326,10 @@ const CreateBounty = () => {
               </ConfigProvider>
             </div>
             <div className="flex flex-col w-[50%]">
-              <p className="mb-4 text-sm sm:text-[.85rem] mt-[1.5rem] font-normal text-white">
+              <p className=" text-sm sm:text-[.85rem] mt-[1.5rem] font-normal text-white">
                 Token Amount
               </p>
-              <div className="w-full items-center pr-8 pl-2 h-[2rem] border-[#595959] hover:border-[#fc923b]  bg-[#141414] border-solid border rounded-[6px] flex">
+              <div className=" mt-[3.7rem] items-center pr-8 pl-2 h-[2rem] border-[#595959] hover:border-[#fc923b]  bg-[#141414] border-solid border w-[50%] rounded-[6px] flex">
                 <input
                   className="border-none w-full text-white pl-0 focus:outline-none placeholder:text-[0.8rem] focus:ring-0 placeholder:text-[#595959] appearance-none text-[0.9rem] bg-[#141414] py-[.1rem]"
                   placeholder="Amount"
@@ -338,45 +338,6 @@ const CreateBounty = () => {
                   // value={title}
                 />
               </div>
-            </div>
-          </div>
-          <div className="flex flex-row gap-8 items-center ">
-            <div className="flex flex-col w-[50%]">
-              <p className=" mb-4 text-sm sm:text-[.85rem] mt-[1.5rem] font-normal text-white">
-                Number of Winners
-              </p>
-              <ConfigProvider
-                theme={{
-                  algorithm: theme.darkAlgorithm,
-                  token: {
-                    colorPrimaryActive: "#fc923b",
-                    colorPrimary: "#fc923b",
-                    colorPrimaryHover: "#fc923b",
-                    colorText: "#fff",
-                  },
-                }}
-              >
-                <Select
-                  placeholder=" Number of Winners"
-                  optionFilterProp="children"
-                  // onChange={handleWinnersChange}
-                  // filterOption={filterOption}
-                  options={[
-                    {
-                      value: "1",
-                      label: "1",
-                    },
-                    {
-                      value: "2",
-                      label: "2",
-                    },
-                    {
-                      value: "3",
-                      label: "3",
-                    },
-                  ]}
-                />
-              </ConfigProvider>
             </div>
           </div>
         </div>

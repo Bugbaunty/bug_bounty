@@ -342,7 +342,7 @@ const CreateBounty = () => {
           </div>
           <div className="flex flex-row gap-8 items-center ">
             <div className="flex flex-col w-[50%]">
-              <p className=" mb-4 text-sm sm:text-[.85rem] mt-[1.5rem] font-normal text-white">
+              <p className=" mb-4 text-sm sm:text-[.85rem] mt-[.8rem] font-normal text-white">
                 Number of Winners
               </p>
               <ConfigProvider

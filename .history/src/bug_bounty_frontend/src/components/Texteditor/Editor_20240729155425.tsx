@@ -56,9 +56,9 @@ const Editor = ({ handleContent, content }: props) => {
       <QuillEditor
         ref={(el) => (quill.current = el)}
         className={
-          " w-full text-white rounded-lg min-h-[20rem] border-[#595959] hover:border-[#fc923b] border-solid border  focus:outline-none appearance-none focus:ring-0"
+          " w-full text-white rounded-lg min-h-[20rem] border-[#595959] hover:border-[#9F9FA8] border-solid border  focus:outline-none appearance-none focus:ring-0"
         }
-        placeholder="Describe the bounty requirements in details"
+        placeholder="Input rules"
         theme="snow"
         value={content}
         formats={formats}

@@ -340,45 +340,6 @@ const CreateBounty = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-row gap-8 items-center ">
-            <div className="flex flex-col w-[50%]">
-              <p className=" mb-4 text-sm sm:text-[.85rem] mt-[1.5rem] font-normal text-white">
-                Number of Winners
-              </p>
-              <ConfigProvider
-                theme={{
-                  algorithm: theme.darkAlgorithm,
-                  token: {
-                    colorPrimaryActive: "#fc923b",
-                    colorPrimary: "#fc923b",
-                    colorPrimaryHover: "#fc923b",
-                    colorText: "#fff",
-                  },
-                }}
-              >
-                <Select
-                  placeholder=" Number of Winners"
-                  optionFilterProp="children"
-                  // onChange={handleWinnersChange}
-                  // filterOption={filterOption}
-                  options={[
-                    {
-                      value: "1",
-                      label: "1",
-                    },
-                    {
-                      value: "2",
-                      label: "2",
-                    },
-                    {
-                      value: "3",
-                      label: "3",
-                    },
-                  ]}
-                />
-              </ConfigProvider>
-            </div>
-          </div>
         </div>
       </div>
     </div>

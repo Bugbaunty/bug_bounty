@@ -1,17 +1,17 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react"
 
-import QuillEditor from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import "./styles.css";
-import React from "react";
+import QuillEditor from "react-quill"
+import "react-quill/dist/quill.snow.css"
+import "./styles.css"
+import React from "react"
 
 interface props {
-  handleContent: (e: any) => void;
-  content: string;
+  handleContent: (e: any) => void
+  content: string
 }
 
 const Editor = ({ handleContent, content }: props) => {
-  const quill = useRef(null);
+  const quill = useRef(null)
 
   const modules = useMemo(
     () => ({
@@ -32,8 +32,8 @@ const Editor = ({ handleContent, content }: props) => {
         matchVisual: true,
       },
     }),
-    []
-  );
+    [],
+  )
 
   const formats = [
     "header",
@@ -49,16 +49,16 @@ const Editor = ({ handleContent, content }: props) => {
     "image",
     "color",
     "clean",
-  ];
+  ]
 
   return (
     <div className="mt-4">
       <QuillEditor
         ref={(el) => (quill.current = el)}
         className={
-          " w-full text-white rounded-lg min-h-[20rem] border-[#595959] hover:border-[#fc923b] border-solid border  focus:outline-none appearance-none focus:ring-0"
+          " w-full text-white rounded-lg min-h-[20rem] border-[#595959] hover:border-primary-second border-solid border  focus:outline-none appearance-none focus:ring-0"
         }
-        placeholder="Describe the bounty requirements in details"
+        placeholder="Input rules"
         theme="snow"
         value={content}
         formats={formats}
@@ -66,7 +66,7 @@ const Editor = ({ handleContent, content }: props) => {
         onChange={handleContent}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Editor;
+export default Editor
