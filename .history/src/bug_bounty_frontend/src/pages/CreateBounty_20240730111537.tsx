@@ -387,7 +387,7 @@ const CreateBounty = () => {
             <p className="text-color-7 hover:text-[#EA4343]  py-2 px-[.9rem] text-[0.85rem] border border-solid border-[#EA4343]/40 sm:text-sm cursor-pointer hover:bg-[#211416] rounded-lg">
               Cancel
             </p>
-            <p className="ml-8 text-color-7 hover:text-[#3DB569]  py-2 px-[.9rem] text-[0.85rem] border border-solid border-[#3DB569]/40 sm:text-sm cursor-pointer hover:bg-[#111E18] rounded-lg">
+            <p className="ml-8 text-color-7 hover:text-[#3DB569]  py-2 px-[.9rem] text-[0.85rem] border border-solid border-[#3DB569]/40 sm:text-sm cursor-pointer hover:bg-[#111E18]">
               Submit
             </p>
           </div>

@@ -384,12 +384,15 @@ const CreateBounty = () => {
 
         <div className="flex justify-end w-full items-center">
           <div className=" flex justify-between items-center mt-4">
-            <p className="text-color-7 hover:text-[#EA4343]  py-2 px-[.9rem] text-[0.85rem] border border-solid border-[#EA4343]/40 sm:text-sm cursor-pointer hover:bg-[#211416] rounded-lg">
+            <p className="text-color-7 hover:text-linear-1  py-2 px-[.9rem] text-[0.85rem] border border-solid border-linear-1 sm:text-sm cursor-pointer">
               Cancel
             </p>
-            <p className="ml-8 text-color-7 hover:text-[#3DB569]  py-2 px-[.9rem] text-[0.85rem] border border-solid border-[#3DB569]/40 sm:text-sm cursor-pointer hover:bg-[#111E18] rounded-lg">
+            <Button
+              onClick={() => console.log("clicked ")}
+              className=" right ml-8   font-bold uppercase"
+            >
               Submit
-            </p>
+            </Button>
           </div>
         </div>
       </div>
