@@ -58,7 +58,10 @@ const defaultOptions = {
    * @type {import("@dfinity/auth-client").AuthClientLoginOptions}
    */
   loginOptions: {
-    identityProvider: network === "ic" ? "https://identity.ic0.app" : iiCanId,
+    identityProvider:
+      network === "ic"
+        ? "https://identity.ic0.app"
+        : `http://127.0.0.1:4943/?canisterId=${iiCanId}`,
   },
   loginNFID: {
     identityProvider:
