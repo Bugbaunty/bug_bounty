@@ -4,7 +4,12 @@ import {
   Stage,
   useGLTF,
 } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
+import {
+  AmbientLightProps,
+  Canvas,
+  DirectionalLightProps,
+  useFrame,
+} from "@react-three/fiber";
 import React, { useRef } from "react";
 import * as THREE from "three";
 import Heading from "../design/Heading";
@@ -29,15 +34,16 @@ const BugModel = (props: any) => {
     }
   });
   return (
-    <>
+    <Canvas>
       <ambientLight
-      // intensity={0.9}
+        intensity={0.5 as unknown as THREE.AmbientLight["intensity"]}
       />
       <directionalLight
-      // position={[0, 10, 0]} intensity={1}
+        position={[0, 10, 0] as unknown as THREE.DirectionalLight["position"]}
+        intensity={1 as unknown as THREE.DirectionalLight["intensity"]}
       />
       <primitive object={scene} dispose={null} {...props} />;
-    </>
+    </Canvas>
   );
 };
 

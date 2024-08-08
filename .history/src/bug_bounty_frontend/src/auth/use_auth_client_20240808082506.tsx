@@ -126,7 +126,7 @@ export const useAuthClient = (options = defaultOptions) => {
       setWhoamiActor(actor);
     } catch (err) {
       console.log("Error on auth:", err);
-      // navigate("/dashboard");
+      navigate("/dashboard");
     }
   };
 

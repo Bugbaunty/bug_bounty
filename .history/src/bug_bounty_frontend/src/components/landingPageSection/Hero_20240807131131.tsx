@@ -33,11 +33,11 @@ const BugModel = (props: any) => {
   return (
     <>
       <ambientLight
-      // intensity={0.5 as unknown as THREE.AmbientLight["intensity"]}
+        intensity={0.5 as unknown as THREE.AmbientLight["intensity"]}
       />
       <directionalLight
-      // position={[0, 10, 0] as unknown as THREE.DirectionalLight["position"]}
-      // intensity={1 as unknown as THREE.DirectionalLight["intensity"]}
+        position={[0, 10, 0] as unknown as THREE.DirectionalLight["position"]}
+        intensity={1 as unknown as THREE.DirectionalLight["intensity"]}
       />
       <primitive object={scene} dispose={null} {...props} />;
     </>

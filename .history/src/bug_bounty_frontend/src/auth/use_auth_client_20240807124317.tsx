@@ -126,15 +126,13 @@ export const useAuthClient = (options = defaultOptions) => {
       setWhoamiActor(actor);
     } catch (err) {
       console.log("Error on auth:", err);
-      // navigate("/dashboard");
+      navigate("/dashboard");
     }
   };
 
   async function logout() {
     await authClient?.logout();
     await updateClient(authClient);
-    setIsAuthenticated(false);
-    setIdentity(null);
   }
 
   return {

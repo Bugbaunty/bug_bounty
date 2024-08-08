@@ -6,11 +6,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProvider } from "./auth/use_auth_client";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <Router>
-      <AuthProvider>
+  <AuthProvider>
+    <React.StrictMode>
+      <Router>
         <App />
-      </AuthProvider>
-    </Router>
-  </React.StrictMode>
+      </Router>
+    </React.StrictMode>
+  </AuthProvider>
 );
