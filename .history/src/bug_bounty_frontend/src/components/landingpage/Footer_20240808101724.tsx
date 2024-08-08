@@ -19,6 +19,7 @@ import { BackgroundBeams } from "../ui/background-beams";
 import { useNavigate } from "react-router-dom";
 
 const BugModel = (props: any) => {
+  const navigate = useNavigate();
   const { scene, animations } = useGLTF(`/hunter2.glb`);
   const mixer = useRef<THREE.AnimationMixer | undefined>(undefined);
 
@@ -49,7 +50,6 @@ const BugModel = (props: any) => {
 };
 
 const Footer = () => {
-  const navigate = useNavigate();
   return (
     <div className="relative">
       <div className=" relative flex justify-center items-center -mt-[15rem] md:-mt-[4rem] lg:mt-[3rem]">
@@ -82,7 +82,7 @@ const Footer = () => {
         />
         <div className="  md:mt-[2rem] flex items-center">
           <Button
-            onClick={() => navigate("")}
+            onClick={() => navigate("/signup")}
             className="z-10 right  font-bold uppercase"
             href=""
             // white

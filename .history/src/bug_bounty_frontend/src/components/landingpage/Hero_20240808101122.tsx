@@ -8,7 +8,6 @@ import { useGLTF, Stage, PresentationControls } from "@react-three/drei";
 import { BackgroundCircles, BottomLine, Gradient } from "../design/Hero";
 import { ScrollParallax } from "react-just-parallax";
 import Notification from "../design/Notification";
-import { useNavigate } from "react-router-dom";
 
 const BugModel = (props: any) => {
   const { scene, animations } = useGLTF(`/bug.glb`);
@@ -41,7 +40,6 @@ const BugModel = (props: any) => {
 
 const Hero = () => {
   const parallaxRef = useRef(null);
-  const navigate = useNavigate();
   const width = window.innerWidth >= 1200 ? "50rem" : "fit-content";
   const height = window.innerHeight >= 1200 ? "50rem" : "30rem";
   return (
@@ -110,9 +108,9 @@ const Hero = () => {
         <BackgroundCircles parallaxRef={parallaxRef} />
         <div className="justify-center relative mt-[23rem] lg:h-[10rem] flex items-end">
           <Button
-            onClick={() => navigate("/signup")}
+            onClick={() => console.log("/signup")}
             className="z-10 right  font-bold uppercase"
-            href=""
+            href="/pricing"
           >
             Get started
           </Button>

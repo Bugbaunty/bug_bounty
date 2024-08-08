@@ -1,0 +1,34 @@
+{
+  "canisters": {
+    "internet_identity": {
+      "type": "custom",
+      "candid": "https://github.com/dfinity/internet-identity/releases/download/release-2023-11-17/internet_identity.did",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/download/release-2023-11-17/internet_identity_dev.wasm.gz",
+      "remote": {
+        "candid": "internet_identity.did",
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      }
+    },
+    "bug_bounty_backend": {
+      "candid": "src/bug_bounty_backend/bug_bounty_backend.did",
+      "package": "bug_bounty_backend",
+      "type": "rust"
+    },
+    "bug_bounty_frontend": {
+      "dependencies": ["bug_bounty_backend"],
+      "source": ["src/bug_bounty_frontend/dist"],
+      "type": "assets",
+      "workspace": "bug_bounty_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

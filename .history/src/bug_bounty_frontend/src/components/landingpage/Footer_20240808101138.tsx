@@ -16,7 +16,6 @@ import Heading from "../design/Heading";
 import Button from "../utils/Button";
 import { socials } from "../../constants";
 import { BackgroundBeams } from "../ui/background-beams";
-import { useNavigate } from "react-router-dom";
 
 const BugModel = (props: any) => {
   const { scene, animations } = useGLTF(`/hunter2.glb`);
@@ -49,7 +48,6 @@ const BugModel = (props: any) => {
 };
 
 const Footer = () => {
-  const navigate = useNavigate();
   return (
     <div className="relative">
       <div className=" relative flex justify-center items-center -mt-[15rem] md:-mt-[4rem] lg:mt-[3rem]">
@@ -82,9 +80,9 @@ const Footer = () => {
         />
         <div className="  md:mt-[2rem] flex items-center">
           <Button
-            onClick={() => navigate("")}
+            onClick={() => console.log("/signup")}
             className="z-10 right  font-bold uppercase"
-            href=""
+            href="/pricing"
             // white
           >
             Get started

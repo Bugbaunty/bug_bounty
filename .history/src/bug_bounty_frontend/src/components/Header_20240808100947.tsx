@@ -68,13 +68,13 @@ const Header = () => {
           </div>
           <HamburgerMenu />
         </nav>
-        <p
-          // href=""
+        <a
+          href=""
           className="button hidden mr-8 text-color-7 transistion-colors hover:text-n-1 lg:block"
           onClick={() => navigate("/signup")}
         >
           Login
-        </p>
+        </a>
         <Button
           onClick={() => navigate("/signup")}
           className="hidden lg:flex "

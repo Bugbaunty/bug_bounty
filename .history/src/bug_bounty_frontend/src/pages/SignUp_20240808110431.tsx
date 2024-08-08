@@ -60,6 +60,7 @@ const SignUp = () => {
                 onClick={() => {
                   loginNFID();
                 }}
+                cla
                 className="bg-gradient-to-r from-linear-1  to-linear-2  text-[transparent] bg-clip-text hover:underline cursor-pointer lg:text-[.82rem] text-[.7rem]"
               >
                 Sign Up

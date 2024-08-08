@@ -5,7 +5,7 @@ import {
   createActor,
   bug_bounty_backend,
 } from "../../../declarations/bug_bounty_backend";
-// import { canisterId as iiCanId } from "../../../declarations/internet_identity";
+import { canisterId as iiCanId } from "../../../declarations/internet_identity";
 import { _SERVICE } from "../../../declarations/bug_bounty_backend/bug_bounty_backend.did";
 import { ActorSubclass } from "@dfinity/agent";
 import { useNavigate } from "react-router-dom";
@@ -33,7 +33,6 @@ const AuthContext = React.createContext<{
 const network = process.env.DFX_NETWORK || "local";
 const APPLICATION_NAME = "BugBounty";
 const APPLICATION_LOGO_URL = "https://i.postimg.cc/zBMQpTJn/Asset-51.png";
-const iiCanId = "asrmz-lmaaa-aaaaa-qaaeq-cai";
 
 //127.0.0.1:4943/?canisterId=bkyz2-fmaaa-aaaaa-qaaaq-cai
 
@@ -84,11 +83,11 @@ export const useAuthClient = (options = defaultOptions) => {
     AuthClient.create(options.createOptions).then(async (client) => {
       updateClient(client);
     });
+    console.log("II url", iiCanId);
   }, []);
 
-  const loginII = async () => {
-    console.log("II url", iiCanId);
-    await authClient.login({
+  const loginII = () => {
+    authClient.login({
       ...options.loginOptions,
       onSuccess: () => {
         updateClient(authClient);
@@ -97,8 +96,8 @@ export const useAuthClient = (options = defaultOptions) => {
     });
   };
 
-  const loginNFID = async () => {
-    await authClient.login({
+  const loginNFID = () => {
+    authClient.login({
       ...options.loginNFID,
       onSuccess: () => {
         updateClient(authClient);
